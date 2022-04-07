@@ -66,6 +66,7 @@
 \RequirePackage[greek,latin,german,main=brazil]{babel}
 \babelprovide[import=grc]{ancientgreek}
 \setmainfont{Gentium Plus}
+\setmonofont{Noto Sans Mono}
 
 % Configurações para o autoref
 \renewcommand{\figureautorefname}{Figura}
