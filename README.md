@@ -26,7 +26,7 @@ git clone https://github.com/caiogeraldes/templates-tese
 git remote remove origin
 ```
 
-- (Opcional): crie seu próprio repositório!
+- (Opcional **mas recomendadíssimo**): crie seu próprio repositório!
 
 - Instale as fontes necessárias: Gentium Book, Gentium, Mononoki Nerd Font,
 Brill e Noto Sans (outras se quiser algo mais intenso (ver documentação))
