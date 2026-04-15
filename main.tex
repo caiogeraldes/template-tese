@@ -1,0 +1,485 @@
+\documentclass[hittite,linearb,armenian,hebraico,russian,sanskrit]{tesecaiera}
+
+\usepackage{lipsum}
+
+\universidade{Universidade XYZ}
+\faculdade{Faculdade XYZ}
+\programa{}
+\versao{original}
+\autor{Autora}
+\titulo{Título}
+\subtitulo{Subtítulo}
+\local{Lugar}
+\data{2026}
+\dataDefesa{3 de janeiro de 2029}
+\tipotrabalho{Trabalho de conclusão de curso}
+\titulacao{doutor em Letras Clássicas}
+\orientador{Dr.}{Fulano}{Universidade XYZ}
+\bancaA{Dr.}{Beltrano}{Universidade ZYX}
+\bancaB{Dr.}{Cicrano}{Instituto Piraporinha de Bom Jesus}
+\bancaC{Dr.}{Fulano 2}{Universidade Federal da Cisplatina}
+\bancaD{Dr.}{Beltrano 2}{Universidade Estadual do Cafundó de Judas}
+
+
+\begin{document}
+
+\frontmatter
+\pagestyle{empty}
+\capa%
+
+\folhaderosto%
+
+{
+  % WARN: CHECAR ANTES DE VERSÃO FINAL
+    \noindent ESTA PÁGINA É RESERVADA PARA A FICHA CATALOGRÁFICA\\
+    SALVE-A EM ./extras/ficha.pdf, REMOVA ESTE AVISO E DESCOMENTE A LINHA A SEGUIR.
+	% \includepdf[pages={-}]{./extras/ficha.pdf}
+}
+
+\cleartooddpage%
+\folhaaprovacao%
+
+% WARN: As curly braces aqui são importantes para evitar que o \SingleSpacing
+% contamine o resto do documento!
+{
+	\cleartooddpage%
+	\input{extras/agradecimentos.tex}
+}
+
+{
+	\cleartooddpage%
+	\input{extras/epígrafe.tex}
+}
+
+{
+	\cleartooddpage%
+	\input{extras/resumo.tex}
+}
+
+{
+	\cleartooddpage%
+	\input{extras/abstract.tex}
+}
+
+{
+	\cleartooddpage%
+
+  % LISTA DE FIGURAS
+  % WARN: REMOVER SE NÃO SE APLICAR
+	\SingleSpacing%
+	\pdfbookmark[0]{\listfigurename}{lof}
+	\listoffigures
+	\cleartooddpage%
+
+  % LISTA DE TABELAS
+  % WARN: REMOVER SE NÃO SE APLICAR
+	\SingleSpacing%
+	\pdfbookmark[0]{\listtablename}{lot}
+	\listoftables
+	\cleartooddpage%
+
+  % LISTA DE ABREVIATURAS
+  % WARN: REMOVER SE NÃO SE APLICAR
+	\SingleSpacing%
+	\chap{Lista de abreviaturas e siglas}
+  % WARN: REMOVER SE NÃO SE APLICAR
+	\glssetwidest[0]{Isoc.kkk}
+	\glssetwidest[1]{Cononkkkk}
+	\printunsrtglossary[
+		type=authwork,
+		title={Autores e obras antigas},
+		nonumberlist=true,
+		style=mcoltree
+	]
+  % WARN: REMOVER SE NÃO SE APLICAR
+	\glsfindwidesttoplevelname%
+	\printunsrtglossary[
+		type=abbreviation,
+		style=alttree,
+		nogroupskip,
+		title={Obras modernas e bancos de dados},
+		nonumberlist=true
+	]
+  % WARN: REMOVER SE NÃO SE APLICAR
+	\glsfindwidesttoplevelname%
+	\printunsrtglossary[
+		title={Siglas},
+		style=alttree,
+		nogroupskip,
+		type={acronym},
+		nonumberlist=true
+	]
+	\cleartooddpage%
+
+  % SUMÁRIO
+	\SingleSpacing%
+	\tableofcontents*
+
+}
+
+\mainmatter*
+\pagenumbering{arabic}
+
+\chapter{Dependências}
+
+\begin{compactitem}
+  \item Fontes:
+    \begin{compactitem}
+      \item Gentium Book e Gentium
+      \item Mononoki Nerd Font
+      \item Brill (texto grego e russo)
+      \item Noto Sans
+      \item Noto Sans Linear B (apenas se a opção \texttt{linearb} for selecionada)
+      \item Noto Serif Armenian (apenas se a opção \texttt{armenian} for selecionada)
+      \item Ezra SIL (apenas se a opção \texttt{hebreu} for selecionada)
+      \item UllikumiA (apenas se a opção \texttt{hittite} for selecionada)
+    \end{compactitem}
+    
+\end{compactitem}
+
+\chapter{Capítulo}\label{chap:sample_chap}
+
+\lipsum[3]
+
+\section{Seção}\label{sec:sample_sec}
+
+\lipsum[2]
+
+\subsection{Subseção}\label{sec:sample_subsec}
+\lipsum[3]
+
+\subsection{Subsubseção}\label{sec:sample_subsubsec}
+\lipsum[4]
+
+\paragraph{Parágrafo}\label{par:sample_paragraph}
+\lipsum[5]
+
+\subparagraph{Subparágrafo}\label{par:sample_subparagraph}
+\lipsum[6]
+
+\clearpage%
+\noindent Para produzir este capítulo, utilizamos o código, sem os \_ antes do nome da
+\emph{label}:
+\begin{lstlisting}
+\chapter{Capítulo}\label{_chap:sample_chap}
+
+\lipsum[3]
+
+\section{Seção}\label{_sec:sample_sec}
+
+\lipsum[2]
+
+\subsection{Subseção}\label{_sec:sample_subsec}
+\lipsum[3]
+
+\subsection{Subsubseção}\label{_sec:sample_subsubsec}
+\lipsum[4]
+
+\paragraph{Parágrafo}\label{_par:sample_paragraph}
+\lipsum[5]
+
+\subparagraph{Subparágrafo}\label{_par:sample_subparagraph}
+\lipsum[6]
+\end{lstlisting}
+
+\chapter{Formatação básica}
+
+\subsection*{Comandos básicos}
+
+\begin{compactitem}
+  \item Itálicos: \lstinline!\emph{itálico}! $\rightarrow$ \emph{itálico} e
+    \lstinline!\textit{itálico}! $\rightarrow$ \emph{itálico}\\
+    \textbf{Note:} Se dois \lstinline!\emph{}! estiverem um dentro do outro, o
+    item do segundo passa a reto: 
+    \lstinline!\emph{itálico, \emph{reto}, itálico}! 
+    $\rightarrow$ \emph{itálico, \emph{reto},
+    itálico}
+\item Negrito: \lstinline!\textbf{negrito}! $\rightarrow$ \textbf{negrito}
+\item Sobre- e subscritos:
+  \lstinline!\textsuperscript{sobre}Escrito\textsubscript{sub}! $\rightarrow$ \textsuperscript{sobre}Escrito\textsubscript{sub}
+\item Sublinhados: \lstinline!\uline{sublinhado}, \uwave{sublinhado}! $\rightarrow$ \uline{sublinhado}, \uwave{sublinhado}
+\item Notas de rodapé: \lstinline!A\footnote{Nota de rodapé}! $\rightarrow$ A\footnote{Nota de rodapé}
+\item Quebra de página forçada: \lstinline!\clearpage!
+\end{compactitem}
+
+\subsection*{Ambientes}
+
+\noindent  Listas não numeradas:\footnote{Ver documentação do pacote
+   \texttt{paralist}.}
+
+  \begin{lstlisting}
+   \begin{compactitem}
+    \item A
+    \item B
+    \item C
+   \end{compactitem}
+  \end{lstlisting}
+   \begin{compactitem}
+    \item A
+    \item B
+    \item C
+   \end{compactitem}
+
+
+   \noindent Listas numeradas:\footnote{Ver documentação do pacote
+   \texttt{paralist}.}
+  \begin{lstlisting}
+   \begin{compactenum}
+    \item A
+    \item B
+    \item C
+   \begin{compactenum}
+    \item A
+    \item B
+    \item C
+   \end{compactenum}
+   \end{compactenum}
+  \end{lstlisting}
+   \begin{compactenum}
+    \item A
+    \item B
+    \item C
+   \begin{compactenum}
+    \item A
+    \item B
+    \item C
+   \end{compactenum}
+   \end{compactenum}
+
+\noindent  Citações:
+\begin{lstlisting}
+  \begin{citacao}
+    \lipsum[1]
+  \end{citacao}
+\end{lstlisting}
+  \begin{citacao}
+    \lipsum[1]
+  \end{citacao}
+
+\subsection*{Outros}
+
+\noindent Sem identação! $\leftarrow$ \lstinline{\noindent Sem identação!}
+
+\chapter{Glosas}
+
+Uma versão simples:
+
+\begin{lstlisting}
+  \exg.arma virum-que cano\\
+  arma-\Neut\Acu\Pl{} varão-\M\Acu\Sg{}-\Conj{} cantar-\Ind\Pres\iSg{}\\
+  Canto as armas e o varão.
+\end{lstlisting}
+
+  \exg.arma virum-que cano\\
+  arma-\Neut.\Acu.\Pl{} varão-\M.\Acu.\Sg{}-\Conj{} cantar-\Pres.\iSg{}\\
+  Canto as armas e o varão.
+
+
+Recomendo que se faça como a seguir, no entanto (usando alfabeto grego no lugar do latino para
+produzir o resultado esperado, infelizmente código não tem grego politônico,
+rs):
+
+\begin{lstlisting}
+{
+\SingleSpacing%
+\ex.\ag.\label{_ex:noattr}sumbouleuei {toi Ksenophonti} elthonta {eis Delphous} anakoinosai {toi theoi} {peri tes poreias}. \\
+aconselhar.\iiiSg{} X.\Dat.\Sg{} ir.\Part.\Acu.\Sg{} para-D. interrogar.\Inf{} ao-deus sobre-a-viagem\\
+Ele aconselha Xenofonte ir a Delfos e interrogar o deus sobre a viagem. (\passagem{11083})
+\bg.\label{_ex:attr}apheke moi elthonti {pros hymas} legein talethe.\\
+conceder.\iiiSg{} \Pron.\Dat.\Sg{} ir.\Part.\Dat.\Sg{} até-vós dizer.\Inf{} a-verdade\\
+Ele me concedeu vir a vós ue contar{(-vos)} a verdade. (\passagem{10299})
+
+}
+  
+\end{lstlisting}
+
+{
+\SingleSpacing%
+\ex.\ag.\label{ex:noattr}συμβουλεύει {τῷ Ξενοφῶντι} ἐλθόντα {εἰς Δελφοὺς}
+ἀνακοινῶσαι {τῷ θεῷ} {περὶ τῆς πορείας}. \\
+aconselhar.\iiiSg{} X.\Dat.\Sg{} ir.\Part.\Acu.\Sg{} para-D. interrogar.\Inf{}
+ao-deus sobre-a-viagem\\
+Ele aconselha Xenofonte ir a Delfos e interrogar o deus sobre a
+viagem. (\passagem{11083})
+\bg.\label{ex:attr}ἀφῆκέ μοι ἐλθόντι {πρὸς ὑμᾶς} λέγειν τἀληθῆ.\\
+conceder.\iiiSg{} \Pron.\Dat.\Sg{} ir.\Part.\Dat.\Sg{} até-vós dizer.\Inf{}
+a-verdade\\
+Ele me concedeu vir a vós e contar{(-vos)} a verdade. (\passagem{10299})
+
+}
+
+
+\noindent Em detalhes: A primeira linha contém o texto original, a segunda a glosa e a terceira a
+tradução, separadas por \lstinline{\\}, a terceira terminando em quebra de linha
+normal.
+Tudo que for separado será considerado um token.
+Itens agrupados devem vir dentro de \lstinline!{}!.
+Escolha entre usar um ponto ou \lstinline!{}! depois dos \emph{macros} de glosas
+como \lstinline!\iSg! para garantir que não haja erros!
+Lembre-se sempre de colocar uma linha em branco a mais depois da última linha de
+todo bloco \lstinline!\ex.!.
+Referências a exemplos podem ser feitas com \lstinline!\ref{ex:attr}!
+$\rightarrow$~\ref{ex:attr}.
+Qualquer dúvida, conferir a documentação do pacote \emph{linguex}.
+
+\chapter{Referẽncias cruzadas, citações}
+
+\noindent Referências cruzadas a capítulos e seções podem ser feitas com ajuda dos macros
+\lstinline!\ref, \autoref!. 
+Referências a exemplos são feitas com~\lstinline!\ref!
+Todas as entradas que você quiser fazer referência a devem vir marcadas com uma
+tag x feita por um \lstinline!\label{x}!.
+
+\begin{center}
+\lstinline!\ref{chap:sample_chap}, \autoref{chap:sample_chap}, \autoref{sec:sample_sec}!\\
+$\downarrow$\\
+ \ref{chap:sample_chap},~\autoref{chap:sample_chap},~\autoref{sec:sample_sec}
+\end{center} 
+
+Citações são produzidas com ajuda dos macros \lstinline!\cite, \textcite!:
+\lstinline!\cite{Probert2015}, \textcite{Probert2015}!
+\cite{Probert2015}, \textcite{Probert2015}.
+Várias citações podem vir dentro do mesmo macro:
+\lstinline!\cite{Dickey2007,Probert2015,Probert2016,DGP}, \textcite{Dickey2007,Probert2015,Probert2016,DGP}!
+\cite{Dickey2007,Probert2015,Probert2016,DGP},~\textcite{Dickey2007,Probert2015,Probert2016,DGP}
+Lembre-se de rodar \lstinline{biber main} depois de usar novas citações para
+atualizar as refs.
+Qualquer dúvida, checar a documentação do pacote \emph{abntex2} e \emph{biblatex}.
+
+Também incluo macros para referenciar abreviaturas, nomes de línguas e incluir informação no índice remissivo, checar arquivos \texttt{.bib} incluídos.
+\begin{compactitem}
+\item abreviação: \lstinline!\gls{DAG}! $\rightarrow$ \gls{DAG}
+\item abreviação plural: \lstinline!\glspl{DAG}! $\rightarrow$ \glspl{DAG}
+\item abreviação 2: \lstinline!\glsxtrshort{tsez}! $\rightarrow$
+  \glsxtrshort{tsez}; \lstinline!\glsxtrshort{LSJ}! $\rightarrow$ \glsxtrshort{LSJ}
+\item longa \lstinline!\glsxtrlong{Ilíada}! $\rightarrow$ \glsxtrlong{Ilíada}
+\item citação de passagem \lstinline!\passagem{Cratylus427b}! $\rightarrow$
+  \passagem{Cratylus427b}\\
+ \lstinline!\passagem{Hdt558}! $\rightarrow$ \passagem{Hdt558};
+ \lstinline!\passagem{LGVII810}! $\rightarrow$ \passagem{LGVII810}
+
+\end{compactitem}
+
+\noindent Lembre-se de rodar \lstinline!bib2gls main -g!.
+
+\chapter{Figuras, tabelas}
+
+Figuras podem ser adicionadas assim:
+
+\begin{lstlisting}
+\begin{figure}[htb]
+  \begin{center}
+    \includegraphics[width=0.95\textwidth]{figs/25eaa071-81f4-43df-a93c-2c236971446a.png}
+  \end{center}
+  \caption[David Lynch dizendo \emph{Fix your hearts or die!}]{Captura de tela
+  de David Lynch dizendo \emph{Fix your hearts or die!}}\label{_fig:lynch}
+\end{figure}
+\end{lstlisting}
+
+\begin{figure}[htb]
+  \caption[David Lynch dizendo \emph{Fix your hearts or die!}]{Captura de tela
+  de David Lynch dizendo \emph{Fix your hearts or die!}}\label{fig:lynch}
+  \begin{center}
+    \includegraphics[width=0.95\textwidth]{figs/25eaa071-81f4-43df-a93c-2c236971446a.png}
+  \end{center}
+\end{figure}
+
+Detalhes: os colchetes depois de figure dizem onde o LaTeX deve preferir colocar
+a imagem, here, top ou bottom. Os colchetes de caption geram o texto para a
+lista de figuras, apenas necessário se a legenda e o texto da lista for ser
+diferente. É possível usar \lstinline!\autoref!: \autoref{fig:lynch}.
+
+Tabelas são parecidas:
+
+\begin{lstlisting}
+\begin{table}[!htb]
+\caption{\label{_tab:porautor}Sentenças selecionadas por autor}
+\centering
+\begin{tabular}[t]{lrl}
+\toprule
+Autor & Freq. & Prop.\\
+\midrule
+Ésquines & 9 & 3.06\%\\
+Ésquilo & 2 & 0.68\%\\
+Andócides & 11 & 3.74\%\\
+Antifonte & 15 & 5.1\%\\
+Demóstenes & 32 & 10.88\%\\
+\midrule
+Total & 69 & --\\
+\bottomrule
+\end{tabular}
+\end{table} 
+\end{lstlisting}
+
+\begin{table}[!htb]
+\caption{Sentenças selecionadas por autor}
+\centering
+\begin{tabular}[t]{lrl}
+\toprule
+Autor & Freq. & Prop.\\
+\midrule
+Ésquines & 9 & 3.06\%\\
+Ésquilo & 2 & 0.68\%\\
+Andócides & 11 & 3.74\%\\
+Antifonte & 15 & 5.1\%\\
+Demóstenes & 32 & 10.88\%\\
+\midrule
+Total & 69 & --\\
+\bottomrule
+\end{tabular}
+\end{table} 
+
+
+\renewcommand*{\mkbibnamefamily}[1]{\textsc{#1}}
+\chapter*{Bibliografia}\addcontentsline{toc}{chapter}{Bibliografia}
+
+  % WARN: Caso não seja útil separar a bibliografia, apenas utilize \printbibliography e remova as linhas a seguir.
+\printbibliography[
+	title={Dicionários, gramáticas, edições e traduções},
+	keyword={reference},
+	heading=subbibliography
+]
+\printbibliography[notkeyword={edicao}, notkeyword={software},
+	notkeyword={reference},heading=subbibliography,title={Referências gerais}]
+\renewcommand*{\mkbibnamefamily}[1]{#1}
+
+\appendix
+\appendixpage*
+
+\chapter{Lorem ipsum}\label{app:loremipsum}
+\lipsum[1]
+
+\backmatter%
+
+{
+	\SingleSpacing%
+	\setcolsepandrule{2.5em}{0pt}
+  % WARN: Caso não seja útil, deletar ou comentar as próximas linhas, manter \clearpage 
+	\chap{Índices remissivos}
+	\pagestyle{ruled}
+	\glsfindwidesttoplevelname%
+	\printunsrtglossary[
+		type=passagens,
+		style=bookindex,
+		title={Autores, obras e passagens citadas},
+	]
+  % WARN: Caso não seja útil, deletar ou comentar as próximas linhas, manter \clearpage 
+	\glsfindwidesttoplevelname%
+	\printunsrtglossary[
+		type=linguas,
+		style=bookindex,
+		title={Línguas},
+		nogroupskip,
+		groups=false
+	]
+
+	\clearpage%
+
+}
+
+\colofao%
+
+
+
+  
+\end{document}
