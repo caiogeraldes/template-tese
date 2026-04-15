@@ -28,6 +28,20 @@ git remote remove origin
 
 - (Opcional): crie seu próprio repositório!
 
+- Instale as fontes necessárias: Gentium Book, Gentium, Mononoki Nerd Font,
+Brill e Noto Sans (outras se quiser algo mais intenso (ver documentação))
+
+- Leia o exemplo `./main.pdf`, criado com `./main.tex`, com algum cuidado para entender um pouco melhor os comandos disponibilizados, sobretudo o capítulo sobre as
+Dependências e o capítulo sobre Referências cruzadas.
+
+- (Opcional): remova o arquivo
+`./figs/25eaa071-81f4-43df-a93c-2c236971446a.png`, mas faça o favor de ouvir o
+David Lynch antes: *FIX YOUR HEARTS OR DIE* e as menções a ele.
+
+![FIX YOUR HEARTS OR DIE](./figs/25eaa071-81f4-43df-a93c-2c236971446a.png) 
+
+- Limpe o arquivo `./main.tex` ou crie uma versão backup para referências futuras.
+
 - Escreva a tese!
 
 ## Como escrever a tese
