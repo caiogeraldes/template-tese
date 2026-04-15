@@ -12,6 +12,9 @@ pacotes `microtype` e `datatool`. Por motivos técnicos, este template não
 funciona de maneira fácil no OverLeaf (sobretudo por conta das fontes
 personalizadas).
 
+Utilizei algo menos ajeitado para produzir a minha, que poderá servir de exemplo
+para quem assim se interessar [pasta src deste link](https://github.com/caiogeraldes/tese).
+
 ## Como iniciar um projeto utilizando este template
 
 - Clone este repositório:
