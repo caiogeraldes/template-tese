@@ -133,7 +133,6 @@
 \newlength{\linespace}
 \setlength{\linespace}{\baselineskip} % current equivalent of \onelineskip
 \newlength{\toptafiddle} \setlength{\toptafiddle}{2\linespace}
-\newlength{\bottafiddle} \setlength{\bottafiddle}{0pt}
 \newlength{\topfiddle}
 \setlength{\topfiddle}{\toptafiddle}
 \newlength{\botfiddle}
@@ -286,7 +285,6 @@
 				\imprimirlocal\par\smallskip
 				\imprimirdata%
 				\par}
-			\enlargethispage{\bottafiddle}
 			\clearpage
 		}}
 
@@ -339,7 +337,6 @@
 				\imprimirlocal\par\smallskip
 				\imprimirdata%
 				\par}
-			\enlargethispage{\bottafiddle}
 			\clearpage}
 }
 
@@ -407,7 +404,6 @@
 				\smallskip
 				\imprimirdata%
 				\par}
-			\enlargethispage{\bottafiddle}
 			\clearpage}
 }
 
